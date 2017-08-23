@@ -96,7 +96,12 @@ abstract class AbstractHttpClient {
                 // log request
                 if ($this->logger->isLoggingEnabled()) {
                     $requestHeaders = get_headers($requestUrl, 1);
-                    $this->logger->logRequest($httpRequest, $requestHeaders);
+
+                    /*Stopped showing Http Request. Only the Http Reponse is shown now. Was Confusing
+                    because first request header shown is an 401 Unauthorized Keep-Alive giving making users think
+                    request failed. Uncomment to reEnable*/
+
+                    //$this->logger->logRequest($httpRequest, $requestHeaders);
                 }
 
                 // let us fire the http request

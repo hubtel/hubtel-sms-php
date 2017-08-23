@@ -1,24 +1,24 @@
-SMSGH HTTP API PHP SDK (Release 2)
+Hubtel HTTP API PHP SDK (Release 2)
 ===================================
 
 ## **Overview**
 
-The SMSGH HTTP API PHP SDK is a wrapper built to assist php-driven applications developers to interact in a more friendly way with the HTTP API.
+The Hubtel HTTP API PHP SDK is a wrapper built to assist php-driven applications developers to interact in a more friendly way with the HTTP API.
 Its goal is also to provide an easy way for those who do not have much knowledge about the whole HTTP Restful technology to interact with the HTTP API.
 In that direction there is no need to go and grab a knowledge about HTTP and REST technology. 
 All one needs is to have the basic knowledge about the PHP language and its Object Oriented pattern. *We mean the basics not advanced knowledge*.
 
 ## **Notice**
 * This is the source code for the current release.
-* The source code of the previous release can be found [here](https://github.com/smsgh/smsghapi-php/tree/release-1) .
+* The source code of the previous release can be found [here](https://github.com/Hubtel/hubtelapi-php/tree/release-1) .
 
 ## **Installation**
 
 The SDK can smoothly run on a platform running **PHP 5.3 and above with CURL extension enabled**.
  
-To use the SDK all you have to do is to download the **Smsgh** folder from the repository and all of its contents and add it to your project. 
-You may then <code>include</code> the Smsgh/Api.php file by referring to the
-appropriate path like such: <pre><code>include '/path/to/location/Smsgh/Api.php';</code></pre>
+To use the SDK all you have to do is to download the **Hubtel** folder from the repository and all of its contents and add it to your project. 
+You may then <code>include</code> the Hubtel/Api.php file by referring to the
+appropriate path like such: <pre><code>include '/path/to/location/Hubtel/Api.php';</code></pre>
 
 
 ## **Usage**
@@ -42,7 +42,7 @@ The SDK currently is organized around four main classes:
 
 To send a message just copy this code snippet and do the necessary modifications:
 ```php
-    require './Smsgh/Api.php';
+    require './Hubtel/Api.php';
 
     // Here we assume the user is using the combination of his clientId and clientSecret as credentials
     $auth = new BasicAuth("user233", "password23");
@@ -85,7 +85,7 @@ To send a message just copy this code snippet and do the necessary modifications
 To schedule a message just copy this code snippet and do the necessary modifications.
 However please do refer to PHP datetime functions to know how to set the message time it is very crucial.
 ```php
-    require './Smsgh/Api.php';
+    require './Hubtel/Api.php';
 
     // Here we assume the user is using the combination of his clientId and clientSecret as credentials
     $auth = new BasicAuth("user233", "password23");
@@ -119,7 +119,7 @@ However please do refer to PHP datetime functions to know how to set the message
 
 To send a message just copy this code snippet and do the necessary modifications:
 ```php
-    require './Smsgh/Api.php';
+    require './Hubtel/Api.php';
 
     // Here we assume the user is using the combination of his clientId and clientSecret as credentials
     $auth = new BasicAuth("user233", "password23");

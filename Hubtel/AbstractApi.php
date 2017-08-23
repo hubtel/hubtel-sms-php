@@ -11,13 +11,13 @@ abstract class AbstractApi {
     protected $apiHost;
     protected $httpClient;
 
-    public function __construct($apiHost, $enableConsoleLog = TRUE) {
+    public function __construct($apiHost, $enableConsoleLog = False) {
 
         if ($apiHost instanceof ApiHost) {
             $this->apiHost = $apiHost;
 
             // Here we can set all the necessary routines
-            $baseUrl = "http://" . $this->apiHost->getHostname();
+            $baseUrl = "https://" . $this->apiHost->getHostname();
 
             // set the port when set
             if ($this->apiHost->getPort() > 0) {

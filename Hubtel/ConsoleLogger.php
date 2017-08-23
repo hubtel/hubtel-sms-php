@@ -10,7 +10,7 @@ class ConsoleLogger implements RequestLogger {
 
     private $enableLog;
 
-    public function __construct($enableLog = TRUE) {
+    public function __construct($enableLog = False) {
         $this->enableLog = $enableLog;
     }
 
