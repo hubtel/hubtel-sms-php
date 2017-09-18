@@ -34,43 +34,28 @@ The SDK currently is organized around four main classes:
 
 To send a message just copy this code snippet and do the necessary modifications:
 ```php
-    require './Hubtel/Api.php';
+require './Hubtel/Api.php';
 
-    // Here we assume the user is using the combination of his clientId and clientSecret as credentials
-    $auth = new BasicAuth("user233", "password23");
+$auth = new BasicAuth("user123", "pass123");
+// instance of ApiHost
+$apiHost = new ApiHost($auth);
+// instance of AccountApi
+$accountApi = new AccountApi($apiHost);
+// Get the account profile
+// Let us try to send some message
+$messagingApi = new MessagingApi($apiHost);
+try {
+    // Send a quick message
+    $messageResponse = $messagingApi->sendQuickMessage("DevUniverse", "+233207110652", "Welcome to planet Hubtel!");
 
-    // instance of ApiHost
-    $apiHost = new ApiHost($auth);
-    $enableConsoleLog = TRUE;
-    $messagingApi = new MessagingApi($apiHost, $enableConsoleLog);
-    try {
-        // Quick Send approach options. Choose the one that meets your requirement
-       option 1.)  $messageResponse = $messagingApi->sendQuickMessage("+233245657867", "+233245098456", "<message>");
-       option 2.)  $messageResponse = $messagingApi->sendQuickMessage("+233245657867", "+233245098456", "<message>", true, <billing_info>);
-
-        if ($messageResponse instanceof MessageResponse) {
-            echo $messageResponse->getStatus();
-        } elseif ($messageResponse instanceof HttpResponse) {
-            echo "\nServer Response Status : " . $messageResponse->getStatus();
-        }
-
-        // Default Approach
-        $mesg = new Message();
-        $mesg->setContent("I will see you soon...");
-        $mesg->setTo("+233245098456");
-        $mesg->setFrom("+233245657867");
-        $mesg->setRegisteredDelivery(true);
-    
-        $messageResponse = $messagingApi->sendMessage($mesg);
-    
-        if ($messageResponse instanceof MessageResponse) {
-            echo $messageResponse->getStatus();
-        } elseif ($messageResponse instanceof HttpResponse) {
-            echo "\nServer Response Status : " . $messageResponse->getStatus();
-        }
-    } catch (Exception $ex) {
-        echo $ex->getTraceAsString();
+    if ($messageResponse instanceof MessageResponse) {
+        echo $messageResponse->getStatus();
+    } elseif ($messageResponse instanceof HttpResponse) {
+        echo "\nServer Response Status : " . $messageResponse->getStatus();
     }
+} catch (Exception $ex) {
+    echo $ex->getTraceAsString();
+}
 ```
 * **How to Schedule a Message**
 
