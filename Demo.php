@@ -1,21 +1,25 @@
 <?php
 
 // Let us test the SDK
+require './vendor/autoload.php';
 
 
-require './Hubtel/Api.php';
+$auth = new BasicAuth("khsqolou", "mgahwiao");
 
-$auth = new BasicAuth("clientId", "clientSecret");
 // instance of ApiHost
 $apiHost = new ApiHost($auth);
+
 // instance of AccountApi
 $accountApi = new AccountApi($apiHost);
-// Get the account profile
+
+// set web console logging to false
+$disableConsoleLogging = false;
+
 // Let us try to send some message
-$messagingApi = new MessagingApi($apiHost);
+$messagingApi = new MessagingApi($apiHost, $disableConsoleLogging);
 try {
     // Send a quick message
-    $messageResponse = $messagingApi->sendQuickMessage("DevUniverse", "+233207110652", "Welcome to planet Hubtel!");
+    $messageResponse = $messagingApi->sendQuickMessage("DevUniverse", "+233XXXXXXXXX", "Welcome to planet Hubtel!");
 
     if ($messageResponse instanceof MessageResponse) {
         echo $messageResponse->getStatus();

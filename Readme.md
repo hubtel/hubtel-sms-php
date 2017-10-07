@@ -1,15 +1,18 @@
-Hubtel HTTP API  PHP SDK 
+Hubtel SMS API PHP SDK 
 =======================
 
 ## **Overview**
 
-This is an open source PHP SDK that allows you to access the Hubtel [REST SMS API](https://developers.hubtel.com) from your PHP application. You need to create a Hubtel account in order to use this API.
+This is an open source PHP SDK that allows you to access the Hubtel [REST SMS API](https://developers.hubtel.com/documentations/sendmessage) from your PHP application. You need to create a Hubtel account in order to use this API.
 
 ## **Installation**
 
 The SDK can smoothly run on **PHP 5.3 and above with CURL extension enabled**.
+The Hubtel PHP SDK can be installed with [Composer](https://getcomposer.org). Run this command:
+
+`composer require hubtel/hubtel-sms`
  
-To use the SDK all you have to do is to download the **Hubtel** folder from the repository and all of its contents and add it to your project. 
+You can also download the **Hubtel** folder from the repository and add it to your project. 
 You may then <code>include</code> the Hubtel/Api.php file by referring to the
 appropriate path like such: <pre><code>include '/path/to/location/Hubtel/Api.php';</code></pre>
 
@@ -18,7 +21,7 @@ appropriate path like such: <pre><code>include '/path/to/location/Hubtel/Api.php
 The SDK currently is organized around four main classes:
 
 * *MessagingApi.php* : 
-    It handles sending and receiving messages, NumberPlans, Campaigns, Keywords, Sender IDs and Message Templates management.(For more information about these terms refer to [Our developer site](http://developers.smsgh.com/).)
+    It handles sending and receiving messages, NumberPlans, Campaigns, Keywords, Sender IDs and Message Templates management.(For more information about these terms refer to [Our developer site](http://developers.smsgh.com/documentations/sendmessage).)
 * *ContactApi.php* : 
         It handles all contacts related tasks. 
 * *AccountApi.php* : 
@@ -123,3 +126,8 @@ To send a message just copy this code snippet and do the necessary modifications
 ## **Notes**
 
 The ContactApi, SupportApi and ContentApi classes follow almost the same pattern of functionalities, please do explore them to grab their capabilities.
+
+Getting help
+=======================
+
+If you need help using the library, please contact Hubtel Support at support@hubtel.com. Our friendly support staff usually reply within 24 hours.
