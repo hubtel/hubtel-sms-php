@@ -37,7 +37,7 @@ The SDK currently is organized around four main classes:
 
 To send a message just copy this code snippet and do the necessary modifications:
 ```php
-require './Hubtel/Api.php';
+require './vendor/autoload.php';
 
 $auth = new BasicAuth("user123", "pass123");
 // instance of ApiHost
@@ -65,7 +65,7 @@ try {
 To schedule a message just copy this code snippet and do the necessary modifications.
 However please do refer to PHP datetime functions to know how to set the message time it is very crucial.
 ```php
-    require './Hubtel/Api.php';
+    require './vendor/autoload.php';
 
     // Here we assume the user is using the combination of his clientId and clientSecret as credentials
     $auth = new BasicAuth("user233", "password23");
@@ -99,7 +99,7 @@ However please do refer to PHP datetime functions to know how to set the message
 
 To send a message just copy this code snippet and do the necessary modifications:
 ```php
-    require './Hubtel/Api.php';
+    require './vendor/autoload.php';
 
     // Here we assume the user is using the combination of his clientId and clientSecret as credentials
     $auth = new BasicAuth("user233", "password23");
