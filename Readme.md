@@ -11,12 +11,21 @@ The SDK can smoothly run on **PHP 5.3 and above with CURL extension enabled**.
 The Hubtel PHP SDK can be installed with [Composer](https://getcomposer.org). Run this command:
 
 `composer require hubtel/hubtel-sms`
- 
-You can also download the **Hubtel** folder from the repository and add it to your project. 
-You may then <code>include</code> the Hubtel/Api.php file by referring to the
-appropriate path like such: <pre><code>include '/path/to/location/Hubtel/Api.php';</code></pre>
+
+After composer pulls in the package, change directory into the package folder 
+
+`cd /path/to/folder`
+
+And run:
+
+`composer install`
+
+The composer install command would install the dependencies of the package and you should see a vendor directory upon successful installation. 
 
 ## **Usage**
+
+## **NB**
+    To avoid collision with class names from other libraries you may be using, the classes in the Hubtel SDK have been namespaced under Hubtel\Sms. Do well to import the classes when you use them in your own projects as seen in the Demo.php file. 
 
 The SDK currently is organized around four main classes:
 
@@ -37,6 +46,14 @@ The SDK currently is organized around four main classes:
 
 To send a message just copy this code snippet and do the necessary modifications:
 ```php
+
+use Hubtel\Sms\ApiHost;
+use Hubtel\Sms\BasicAuth;
+use Hubtel\Sms\AccountApi;
+use Hubtel\Sms\HttpResponse;
+use Hubtel\Sms\MessagingApi;
+use Hubtel\Sms\MessageResponse;
+
 require './vendor/autoload.php';
 
 $auth = new BasicAuth("user123", "pass123");
@@ -65,6 +82,13 @@ try {
 To schedule a message just copy this code snippet and do the necessary modifications.
 However please do refer to PHP datetime functions to know how to set the message time it is very crucial.
 ```php
+    use Hubtel\Sms\ApiHost;
+    use Hubtel\Sms\BasicAuth;
+    use Hubtel\Sms\AccountApi;
+    use Hubtel\Sms\HttpResponse;
+    use Hubtel\Sms\MessagingApi;
+    use Hubtel\Sms\MessageResponse;
+
     require './vendor/autoload.php';
 
     // Here we assume the user is using the combination of his clientId and clientSecret as credentials

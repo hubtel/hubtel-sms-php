@@ -4,13 +4,24 @@
     "keywords": ["sms", "hubtel", "api"],
     "homepage": "https://github.com/hubtel/hubtel-sms-php",
     "type": "library",
+    "version":"1.0", 
+    "authors": [
+        {
+            "name": "Arsene Tochemy",
+            "email": "tochemey@gmail.com"
+        }, 
+        {
+            "name": "Hubtel", 
+            "email": "support@hubtel.com"
+        }
+    ],
+    "minimum-stability": "stable",
     "require": {
         "php": "^5.3"
     },
     "autoload": {
-        "classmap": [
-            "Hubtel"
-        ]
-
+        "psr-4": {
+            "Hubtel\\Sms\\":"src/"
+        }
    }
 }
