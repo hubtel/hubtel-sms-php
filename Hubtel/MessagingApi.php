@@ -1263,7 +1263,7 @@ class MessagingApi extends AbstractApi {
      * @throws ErrorException
      */
     public function sendQuickMessage($from, $to, $content, $registeredDelivery = true, $billingInfo = null) {
-        $resource = "/messages/";
+        $resource = "/messages/send";
         if (is_null($from)) {
             throw new ErrorException("Parameter 'from' cannot be null");
         } elseif (!is_string($from)) {
