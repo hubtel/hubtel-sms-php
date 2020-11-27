@@ -14,7 +14,7 @@ class ApiHost {
     private $contextPath;
     private $timeout;
 
-    public function __construct($auth = null, $hostname = "api.hubtel.com", $port = -1, $contextPath = "v1", $timeout = 5000) {
+    public function __construct($auth = null, $hostname = "smsc.hubtel.com", $port = -1, $contextPath = "v1", $timeout = 5000) {
         $this->auth = $auth;
         $this->hostname = $hostname;
         $this->port = $port;
